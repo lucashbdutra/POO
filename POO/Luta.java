@@ -1,3 +1,5 @@
+package Luta;
+
 import java.util.Random;
 
 //* Resumindo quando vou passar os atributos de uma classe posso passar ao inves de tipos primitivos
@@ -22,10 +24,13 @@ obj.setNumero(num) faço ele receber a variavel como parametro
 */
 
 public class Luta{
+    //*Atributos
     private Lutador desafiado; //! Isso é uma agregação, onde eu pego elementos de outra classe 
     private Lutador desafiante; //! Isso são tipos abstratos de dados, onde eu uso outra classe como parâmetro para essa.
     private boolean aprovada;
    
+
+    //*Getters e Setters
     public Lutador getDesafiado() {
         return this.desafiado;
     }
@@ -40,8 +45,9 @@ public class Luta{
         this.desafiante = desafiante;
     }
 
-    //métdodos especiais
-   
+
+    
+    //* Métdodos especiais
     public void marcarLutra(Lutador l1, Lutador l2){ 
         if (l1.getCategoria().equals(l2.getCategoria()) && l1 != l2){
             this.aprovada = true;
@@ -57,9 +63,10 @@ public class Luta{
     public void lutar(){
         if(this.aprovada){
             System.out.println("### DESAFIADO ###");
-            this.desafiado.apresentar();
+            System.out.println(this.desafiado.apresentar());
+
             System.out.println("### DESAFIANTE ###");
-            this.desafiante.apresentar();
+            System.out.println(this.desafiante.apresentar());
 
             Random aleatorio = new Random(); //Classe ramdom pra gerar número aleatório
             int vencedor = aleatorio.nextInt(3); // gera um inteiro aleatório de 0 a 2
